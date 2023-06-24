@@ -1,4 +1,4 @@
 num = int(input('Digite um número inteiro: '))
-num-ant = num - 1
-num-sus = num + 1
-print('O sucessor é: {} e o antecessor é: {}'.format(num-sus, num-ant))
+numAnt = num - int(1)
+numSus = num + int(1)
+print('O antecessor é: {} e o sucessor é: {}'.format(numAnt, numSus))
