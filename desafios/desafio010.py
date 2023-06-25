@@ -1,4 +1,3 @@
-reais = int(input('Valor em Reais: '))
-cotacao = float(3.47)
-dolar = reais / cotacao
-print('O valor de {} reais, poderá comprar: {:.2f} dolares.'.format(reais, dolar))
+reais = float(input('Valor em Reais: R$'))
+dolar = reais / 3.27
+print('Com o valor de R${:.2f}, você poderá comprar: US${:.2f} '.format(reais, dolar))
