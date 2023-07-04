@@ -8,109 +8,35 @@ Se acertou 100% parabenizar e perguntar se deseja fazer de outro número.
 Se não acertou 100%, imprimir mensagem que deve estudar mais e imprimir a tabuada completa para estudar.
 '''
 
-from random import shuffle
+import random
 
-n = int(input('Tabuada do: '))
-certo = 0
-errado = 0
+def tabuada():
+    n = int(input('Seja bem vinda(o)! Tabuada do número: '))
+    acertos = 0
+    erros = 0
 
-p1 = int(input('{} x 1 = '.format(n)))
-if p1 == n * 1:
-    print('Certo')
-    certo += 1
-else:
-    print('Errado..')
-    errado += 1
+    num = list(range(1, 11))
+    random.shuffle(num)
 
-p2 = int(input('{} x 2 = '.format(n)))
-if p2 == n * 2:
-    print('Certo')
-    certo += 1
-else:
-    print('Errado..')
-    errado += 1
+    for i in num:
+        resposta = int(input('{} x {} = '.format(n, i)))
+        resultado = n * i
 
-p3 = int(input('{} x 3 = '.format(n)))
-if p3 == n * 3:
-    print('Certo')
-    certo += 1
-else:
-    print('Errado..')
-    errado += 1
+        if resposta == resultado:
+            print('Você acertou!')
+            acertos += 1
+        else:
+            print('Você errou. O correto é {}'.format(resultado))
+            erros += 1
 
-p4 = int(input('{} x 4 = '.format(n)))
-if p4 == n * 4:
-    print('Certo')
-    certo += 1
-else:
-    print('Errado..')
-    errado += 1
+    print('Acertou um total de: {}'.format(acertos))
+    print('E errou um total de: {}'.format(erros))
 
-p5 = int(input('{} x 5 = '.format(n)))
-if p5 == n * 5:
-    print('Certo')
-    certo += 1
-else:
-    print('Errado..')
-    errado += 1
-
-p6 = int(input('{} x 6 = '.format(n)))
-if p6 == n * 6:
-    print('Certo')
-    certo += 1
-else:
-    print('Errado..')
-    errado += 1
-
-p7 = int(input('{} x 7 = '.format(n)))
-if p7 == n * 7:
-    print('Certo')
-    certo += 1
-else:
-    print('Errado..')
-    errado += 1
-
-p8 = int(input('{} x 8 = '.format(n)))
-if p8 == n * 8:
-    print('Certo')
-    certo += 1
-else:
-    print('Errado..')
-    errado += 1
-
-p9 = int(input('{} x 9 = '.format(n)))
-if p9 == n * 9:
-    print('Certo')
-    certo += 1
-else:
-    print('Errado..')
-    errado += 1
-
-p10 = int(input('{} x 10 = '.format(n)))
-if p10 == n * 10:
-    print('Certo')
-    certo += 1
-else:
-    print('Errado..')
-    errado += 1
-
-lista = [p1, p2, p3, p4, p5. p6, p7, p8, p9, p10]
-escolhido = shuffle(lista)
-
-print('Você acertou: {}'.format(certo))
-print('E errou: {}'.format(errado))
-
-if certo == 10:
-    print('Parabéns!! Você acertou todas!')
-else:
-    print('Você não conseguiu acertar todas e deve estudar mais!')
-    print('{} x 1= {}'.format(n, n * 1))
-    print('{} x 2= {}'.format(n, n * 2))
-    print('{} x 3= {}'.format(n, n * 3))
-    print('{} x 4= {}'.format(n, n * 4))
-    print('{} x 5= {}'.format(n, n * 5))
-    print('{} x 6= {}'.format(n, n * 6))
-    print('{} x 7= {}'.format(n, n * 7))
-    print('{} x 8= {}'.format(n, n * 8))
-    print('{} x 9= {}'.format(n, n * 9))
-    print('{} x 10= {}'.format(n, n * 10))
+    if acertos == 10:
+        print('Parabéns!! Você acertou todas!\U0001F389 \U0001F3C6 \U0001F38A')
+    else:
+        print('Você não conseguiu acertar todas, então deverá estudar mais!')
+        print("\nTabuada completa:")
+        for i in range(1, 11):
+            print('{} x {} = {}'.format(n, i, n * i))
+tabuada()
