@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.10.2/brython.js"></script>
+</head>
+<body>
+    <div>
+        <h2>Tabuada</h2>
+        <form onsubmit="return false;">
+            <label for="numero">Número:</label>
+            <input type="number" id="numero" />
+            <br>
+            <table id="tabuada">
+                <thead>
+                    <tr>
+                        <th>Número</th>
+                        <th>Resposta</th>
+                        <th>Resultado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <div id="resultado"></div>
+            <button onclick="tabuada()">Calcular</button>
+            
+        </form>
+    </div>
+
+    <script type="text/python">
+        import random
+
+        def tabuada():
+            numero = int(document.getElementById("numero").value)
+            acertos = 0
+            erros = 0
+            tbody = document.getElementById("tabuada").getElementsByTagName("tbody")[0]
+            tbody.innerHTML = ""
+
+            num = list(range(1, 11))
+            random.shuffle(num)
+
+            for i in num:
+                resposta = int(window.prompt(f"{numero} x {i} ="))
+                resultado = numero * i
+
+                if resposta == resultado:
+                    acertos += 1
+                else:
+                    erros += 1
+
+                row = f"<tr><td>{numero} x {i}</td><td>{resposta}</td><td>{resultado}</td></tr>"
+                tbody.innerHTML += row
+
+            resultado_div = document.getElementById("resultado")
+            resultado_div.innerHTML = f"Acertou um total de: {acertos} <br> E errou um total de: {erros}"
+
+            if acertos == 10:
+                resultado_div.innerHTML += "Parabéns!! Você acertou todas! 🎉🏆🎊"
+            else:
+                resultado_div.innerHTML += "Você não conseguiu acertar todas, então deverá estudar mais!"
+        window.onload = lambda: brython(compile_mode="exec")
+        tabuada()
+    </script>
+</body>
+</html>
