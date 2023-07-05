@@ -1,8 +1,13 @@
-from random import choice
-lista = [1, 2, 3, 4, 5]
-sorteado = choice(lista)
-num = int(input('Adivinhe qual número de 1 à 5 será sorteado: '))
-if num == sorteado:
-    print('Parabéns! Você escolheu o número sorteado! Foi o {}!'.format(sorteado))
+from random import randint
+from time import sleep
+computador = randint(0, 5) #faz o computador pensar
+print('=-^-' * 14)
+print('Vou pensar em um número entre 0 e 5. Tente adivinhar...')
+print('=-^-' * 14)
+jogador = int(input('Qual número eu pensei? ')) #jogador tenta adivinhar
+print('Pensando...')
+sleep(2)
+if jogador == computador:
+    print('Parabéns! Você consegui me vencer!')
 else:
-    print('Que pena, você escolheu o {}, mas o número sorteado foi {}.'.format(num, sorteado))
+    print('Ganhei! Eu pensei no número {} e não no {}.'.format(computador, jogador))
