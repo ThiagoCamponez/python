@@ -9,9 +9,10 @@ Se não acertou 100%, imprimir mensagem que deve estudar mais e imprimir a tabua
 '''
 
 import random
+from time import sleep
 
 def tabuada():
-    n = int(input('Seja bem vinda(o)! Tabuada do número: '))
+    n = int(input('\033[4;30;45mSeja bem vinda(o)!\033[m Tabuada do número: '))
     acertos = 0
     erros = 0
 
@@ -23,17 +24,18 @@ def tabuada():
         resultado = n * i
 
         if resposta == resultado:
-            print('Você acertou!')
+            sleep(1)
+            print('\033[1;32mVocê acertou!\033[m\U0001F389')
             acertos += 1
         else:
-            print('Você errou. O correto é {}'.format(resultado))
+            print('\033[1;31mVocê errou.\033[m O correto é \033[1;32m{}\033[m'.format(resultado))
             erros += 1
 
     print('Acertou um total de: {}'.format(acertos))
     print('E errou um total de: {}'.format(erros))
 
     if acertos == 10:
-        print('Parabéns!! Você acertou todas!\U0001F389 \U0001F3C6 \U0001F38A')
+        print('\033[1;32mParabéns!! Você acertou todas!\033[m\U0001F389 \U0001F3C6 \U0001F38A')
     else:
         print('Você não conseguiu acertar todas, então deverá estudar mais!')
         print("\nTabuada completa:")
