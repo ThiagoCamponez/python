@@ -10,7 +10,7 @@ elif idade <= 14:
     print('{} Anos - Categoria: \033[36mINFANTIL\033[m'.format(idade))
 elif idade <= 19:
     print('{} Anos - Categoria: \033[32mJUNIOR\033[m'.format(idade))
-elif idade <= 20:
+elif idade <= 25:
     print('{} Anos - Categoria: \033[34mSENIOR\033[m'.format(idade))
 else:
     print('{} Anos - Categoria: \033[31mMASTER\033[m'.format(idade))
