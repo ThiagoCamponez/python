@@ -1,4 +1,5 @@
-preçoNormal = float(input('Valor do produto: '))
+print(' LOJAS CAMPONÊZ '.center(30, '='))
+preçoNormal = float(input('Valor dos produtos: '))
 condPagamento = int(input('\n[1] À Vista dinheiro/cheque - 10% de desconto\n[2] À Vista no cartão de débito - 5% de desconto\n[3] Em até 2x no cartão de crédito - Valor normal\n[4] 3x ou mais no cartão de crédito - 20% de Juros\n\nInforme a condição de pagamento: '))
 print('\nValor do produto: R${:.2f}'.format(preçoNormal), end = ' ')
 if condPagamento == 1:
