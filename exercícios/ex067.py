@@ -1,13 +1,14 @@
-r = c = 0
-n = int(input('Quer ver a tabuada de qual valor? '))
-print('-' * 35)
-while True:
-    while c <= 11:
-        r = n * c
-        print(f'{n} x {c} = {r}')
-        c += 1
-        if n < 0:
-            break
-        else:
-            n = int(input('Quer ver a tabuada de qual valor? '))
-print('Fim!')
+res = 0
+num = 1
+while num > 0:
+    num = int(input('\nQuer ver a tabuada de qual valor? '))
+    if num < 0:
+        break
+    print('-' * 35)
+    cont = 1
+    while cont <= 10:
+        res = num * cont
+        print(f'{num} x {cont} = {res}')
+        cont += 1
+    print('-' * 35)
+print('\nPrograma Tabuada ENCERRADO. Volte sempre!\n')
