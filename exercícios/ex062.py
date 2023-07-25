@@ -5,20 +5,14 @@ primeiro = int(input('Primeiro termo: '))
 razão = int(input('Razão: '))
 termo = primeiro
 cont = 1
-mais = 1
-ntermos = 0
+mais = 10
+total = 0
 while mais != 0:
-    while cont <= 10:
+    total = total + mais
+    while cont <= total:
         print('{} → '.format(termo), end='')
-        cont += 1
         termo += razão
-        ntermos += mais
+        cont += 1
     print('PAUSA')
     mais = int(input('Quantos termos você quer mostrar a mais? '))
-    if mais != 0:
-        while cont == mais:
-            print('{} → '.format(termo), end='')
-            cont += 1
-            termo += razão
-            ntermos += mais
-print('Progressão finalizada com {} termos mostrados.'.format(ntermos))
+print('\nProgressão finalizada com {} termos mostrados.\n'.format(total))
