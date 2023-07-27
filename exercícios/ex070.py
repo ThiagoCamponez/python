@@ -1,17 +1,23 @@
 print('-' * 40)
 print('LOJA SUPER BARATÃO'.center(40))
 print('-' * 40)
-total = 0
-maiorquemil = 0
+total = menor = menorvalor = maiorquemil = 0
 while True:
+    menor += 1
     produto = str(input('Nome do Produto: ')).strip().upper()
     valor = float(input('Preço: R$'))
     total += valor
     if valor > 1000:
         maiorquemil += 1
+    if menor == 1:
+        menorvalor = valor
+    else:
+        if valor < menorvalor:
+            menorvalor = valor
     continuar = str(input('Quer continuar? [S/N] ')).strip().lower()[0]
     if continuar == 'n':
         break
 print('------------- FIM DO PROGRAMA -------------')
 print(f'O total da compra foi {total}')
 print(f'Temos {maiorquemil} produtos custando mais de R$1000.00')
+print(f'E o produto mais barato foi: --- que custa R${menorvalor}')
