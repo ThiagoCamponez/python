@@ -9,12 +9,15 @@ Se não acertou 100%, imprimir mensagem que deve estudar mais e imprimir a tabua
 '''
 
 import random
+import time
 from time import sleep
 
 def tabuada():
     n = int(input('\033[4;30;45mSeja bem vinda(o)!\033[m Tabuada do número: '))
     acertos = 0
     erros = 0
+    inicio = time.time()
+    tempo_total = 0
 
     num = list(range(1, 11))
     random.shuffle(num)
@@ -41,4 +44,10 @@ def tabuada():
         print("\nTabuada completa:")
         for i in range(1, 11):
             print('{} x {} = {}'.format(n, i, n * i))
+    fim = time.time()
+    tempo_total = fim - inicio
+    if tempo_total < 60:
+        print(f'Você terminou a tabuada em {tempo_total:.0f} segundos')
+    else:
+        print(f'Você terminou a tabuada em {tempo_total / 60:.2f} minutos')
 tabuada()
