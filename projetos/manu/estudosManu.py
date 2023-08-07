@@ -1,2 +1,2 @@
-resultado = 206 - 68
+resultado = 257 - 10 + 143
 print(resultado)
