@@ -1,2 +1,2 @@
-resultado = 257 - 10 + 143
+resultado = 20 + 2 * (5 + 7) - 10
 print(resultado)
