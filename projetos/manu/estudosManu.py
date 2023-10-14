@@ -1,2 +1,2 @@
-resultado = 20 + 2 * (5 + 7) - 10
+resultado = 79 - 56 / 2 * 3
 print(resultado)
